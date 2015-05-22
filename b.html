@@ -1,0 +1,73 @@
+<html>
+<body bgcolor=black>
+<center><font color="LightCoral"><h1>REGISTRATION FORM</h1></font></center>
+<center>
+<script>
+function valid() 
+{
+var x = document.myForm.fname.value;
+if (x== null || x== "" || x<=0 || x>=9) 
+{
+alert("First name must be filled out properly");
+return false;
+}
+var y = document.myForm.lname.value;
+if (y == null || y == ""|| y<=0 || y>=9) 
+{
+alert("Last name must be filled out properly");
+return false;
+}
+
+var a = document.myForm.contactno.value;
+if (a == null || a == "" || a.length < 10 || a.length>10) 
+{
+alert("Fill Your Contact Number Properly");
+return false;
+}
+var z = document.myForm.emailid.value;
+var atpos = z.indexOf("@");
+var dotpos = z.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=z.length) 
+{
+alert("Not a valid e-mail address");
+return false;
+}
+}
+
+</script>
+
+<style>
+p
+{
+font-size: 25px;
+color:  white;
+font-family: "Arial", cursive, sans-serif;
+}
+p1
+{
+font-size: 20px;
+font-family: "Arial", cursive, sans-serif;
+}
+fieldset
+{
+      display:inline;  
+}
+</style>
+<body>
+<form name="myForm"  onsubmit="return valid()"  method="post">
+<fieldset>
+<p1>	
+	<font color="pink">First Name:<input type="text" name="fname" div style="margin-left: 8%" size="30"></font><br><br>
+	<font color="pink">Last Name:<input type="text" name="lname" div style="margin-left: 8%" size="30"></font><br><br>
+	<font color="pink">Address:<input type="text" name="address" div style="margin-left: 8%;width:250px; height:50px;" size="90"></font><br><br>
+	<font color="pink">Contact-No:<input type="text" name="contactno" div style="margin-left: 8%" size="30"></font><br><br>
+	<font color="pink">Email-Id:<input type="text" name="emailid" div style="margin-left: 8%" size="30"></font><br><br>
+	<font color="pink">Date:<input type="date" name="date" id="date" step="10"></font>
+</p1>
+<br>
+<input type="submit" value="Submit ">
+</fieldset>
+</form>
+</center>
+</body>
+</html>

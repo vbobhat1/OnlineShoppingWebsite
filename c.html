@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+var timerid = 0;
+var images = new Array(	"lap2.jpg",
+			"desk1.jpg",
+			"tab1.jpg","lap3.jpg","tab3.jpg");
+var countimages = 0;
+function startTime()
+{
+	if(timerid)
+	{
+		timerid = 0;
+	}
+	var tDate = new Date();
+	
+	if(countimages == images.length)
+	{
+		countimages = 0;
+	}
+	if(tDate.getSeconds() % 2 == 0)
+	{
+		document.getElementById("img1").src = images[countimages];
+	}
+	countimages++;
+	
+	timerid = setTimeout("startTime()", 1000);
+}
+</script>
+</head>
+<body style=" " onload="startTime();">
+	<div align="center">
+<img id="img1"  src="lap2.jpg" width="370px" height="425px" />
+</div>
+</body>
+</html>
